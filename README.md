@@ -4,8 +4,8 @@ Mio is a fast, low-level I/O library for Rust focusing on non-blocking APIs and
 event notification for building high performance I/O apps with as little
 overhead as possible over the OS abstractions.
 
-[![Crates.io][crates-badge]][crates-url]
-[![MIT licensed][mit-badge]][mit-url]
+[![crates.io][crates-badge]][crates-url]
+[![MIT Licensed][mit-badge]][mit-url]
 [![Build Status][actions-badge]][actions-url]
 [![Build Status][cirrus-badge]][cirrus-url]
 
@@ -20,11 +20,11 @@ overhead as possible over the OS abstractions.
 
 **API documentation**
 
-* [v0.8](https://docs.rs/mio/^0.8)
-* [v0.7](https://docs.rs/mio/^0.7)
+* [v0.8](https://docs.rs/mio/0.8)
+* [v0.7](https://docs.rs/mio/0.7)
 
 This is a low level library, if you are looking for something easier to get
-started with, see [Tokio](https://tokio.rs).
+started with, see [Tokio](https://tokio.rs/).
 
 ## Usage
 
@@ -93,14 +93,16 @@ fn main() -> Result<(), Box<dyn Error>> {
                     }
 
                     if event.is_readable() {
-                        // We can (likely) read from the socket without blocking.
+                        // We can (likely) read from the socket without
+                        // blocking.
                     }
 
                     // Since the server just shuts down the connection, let's
                     // just exit from our event loop.
                     return Ok(());
                 }
-                // We don't expect any events with tokens other than those we provided.
+                // We don't expect any events with tokens other than those we
+                // provided.
                 _ => unreachable!(),
             }
         }
@@ -117,8 +119,8 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 ## Non-goals
 
-The following are specifically omitted from Mio and are left to the user
-or higher-level libraries.
+The following are specifically omitted from Mio and are left to the user or
+higher-level libraries.
 
 * File operations
 * Thread pools / multi-threaded event loop
@@ -138,8 +140,8 @@ Currently supported platforms:
 * iOS
 * macOS
 
-There are potentially others. If you find that Mio works on another
-platform, submit a PR to update the list!
+There are potentially others. If you find that Mio works on another platform,
+submit a PR to update the list!
 
 Mio can handle interfacing with each of the event systems of the aforementioned
 platforms. The details of their implementation are further discussed in the
@@ -169,11 +171,12 @@ questions.
 
 ## Contributing
 
-Interested in getting involved? We would love to help you! For simple
-bug fixes, just submit a PR with the fix and we can discuss the fix
-directly in the PR. If the fix is more complex, start with an issue.
+Interested in getting involved? We would love to help you! For simple bug fixes,
+just submit a PR with the fix and we can discuss the fix directly in the PR. If
+the fix is more complex, start with an issue.
 
-If you want to propose an API change, create an issue to start a
-discussion with the community. Also, feel free to talk with us in Discord.
+If you want to propose an API change, create an issue to start a discussion with
+the community. Also, feel free to talk with us in Discord.
 
-Finally, be kind. We support the [Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct).
+Finally, be kind. We support the
+[Rust Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct).
